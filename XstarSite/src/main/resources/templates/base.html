@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)">
+<head>
+<meta charset="UTF-8">
+<title th:text="${title}">首页</title>
+<link rel="stylesheet" href="../../sttaic/style.css"
+	th:href="@{/css/style.css}">
+</head>
+<body>
+	<header>
+		<div class="nav">
+			<a class="logo" href="/">个人博客</a>
+			<ul class="startlist">
+				<li data-th-each="item:${nav}"><a href="/"
+					data-th-href="${item.path}" data-th-text="${item.name}"></a></li>
+			</ul>
+		</div>
+	</header>
+	<div th:replace="${content}" class="article"></div>
+	<footer>
+	<p th:utext="${footerText}">Power By SpringBoot!</p>
+	</footer>
+</body>
+</html>

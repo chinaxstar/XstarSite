@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>文章编辑</title>
+</head>
+<body>
+	<!-- 加载编辑器的容器 -->
+	<script id="container" name="content" type="text/plain">这里写你的初始化内容</script>
+	<!-- 配置文件 -->
+	<script type="text/javascript" src="/ueditor1.4.3.3/ueditor.config.js"></script>
+	<!-- 编辑器源码文件 -->
+	<script type="text/javascript" src="/ueditor1.4.3.3/ueditor.all.js"></script>
+	<script type="text/javascript"> 
+	UE.Editor.prototype._bkGetActionUrl = UE.Editor.prototype.getActionUrl;
+	UE.Editor.prototype.getActionUrl = 
+		function(action) { if (action == 'uploadimage' || action == 'uploadscrawl' || action == 'uploadimage') 
+		{ return 'http://localhost:8080/imgUpload'; //'http://localhost:8080/imgUpload';为方法imgUpload的访问地址 } 
+		else { return this._bkGetActionUrl.call(this, action); } } </script>
+	<!-- 实例化编辑器 -->
+	<script type="text/javascript">
+	    var ue = UE.getEditor('container');
+	</script>
+
+</body>
+</html>
