@@ -1,10 +1,6 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>文章编辑</title>
-</head>
-<body>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/admin/login_base :: layout(~{::ueditor})}">
+<div th:fragment="ueditor">
 	<!-- 加载编辑器的容器 -->
 	<script id="container" name="content" type="text/plain">这里写你的初始化内容</script>
 	<!-- 配置文件 -->
@@ -21,6 +17,5 @@
 	<script type="text/javascript">
 	    var ue = UE.getEditor('container');
 	</script>
-
-</body>
+</div>
 </html>

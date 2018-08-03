@@ -9,16 +9,15 @@
 <body>
 	<header>
 		<div class="nav">
-			<a class="logo" href="/">个人博客</a>
+			<a class="logo" href="/" th:text="${user.username}">个人博客</a>
 			<ul class="startlist">
-				<li data-th-each="item:${nav}"><a href="/"
-					data-th-href="${item.path}" data-th-text="${item.name}"></a></li>
+				<li><a href="/articleEditor" th:href="@{/admin/articleEditor}">写文章</a></li>
 			</ul>
 		</div>
 	</header>
 	<div th:include="${content}" class="article"></div>
 	<footer>
-	<p th:utext="*{footerText}">Power By SpringBoot!</p>
+		<p th:utext="${footerText}">Power By SpringBoot!</p>
 	</footer>
 </body>
 </html>

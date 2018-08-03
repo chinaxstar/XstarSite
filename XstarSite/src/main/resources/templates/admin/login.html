@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>登录</title>
+</head>
+<body>
+	<form action="/login" method="post">
+		<div>
+			<input type="text" name="username" alt="用户名">
+		</div>
+		<div>
+			<input type="password" name="passwd" alt="密码">
+		</div>
+		<div th:if="${msg}">
+			<p th:utext="${msg}"></p>
+		</div>
+		<div>
+			<input type="submit" value="登录">
+		</div>
+	</form>
+</body>
+</html>

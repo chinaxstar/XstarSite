@@ -16,9 +16,9 @@
 			</ul>
 		</div>
 	</header>
-	<div th:replace="${content}" class="article"></div>
+	<div th:include="${content}" class="article"></div>
 	<footer>
-	<p th:utext="${footerText}">Power By SpringBoot!</p>
+	<p th:utext="*{footerText}">Power By SpringBoot!</p>
 	</footer>
 </body>
 </html>

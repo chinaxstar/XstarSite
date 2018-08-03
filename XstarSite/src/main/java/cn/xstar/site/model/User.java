@@ -1,10 +1,12 @@
 package cn.xstar.site.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class User {
+	@GeneratedValue()
 	@Id
 	private int id;
 	
