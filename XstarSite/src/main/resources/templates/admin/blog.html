@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/admin/login_base :: layout(~{::blog})}">
+<div th:fragment="blog">
+    <h2 th:text="${blog.title}">标题</h2>
+    <div>
+        <ul>
+            <li th:text="'作者:'+${blog.author.username}"></li>
+            <li th:text="'时间:'+${blog.lastModifyTime}"></li>
+        </ul>
+    </div>
+    <p th:utext="${blog.content}">无内容</p>
+</div>
+</html>
