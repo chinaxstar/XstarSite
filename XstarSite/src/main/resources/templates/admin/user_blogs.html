@@ -3,9 +3,12 @@
 <div th:fragment="blogs">
     <div th:each="blog:${blogs}">
         <div>
-            <h2 th:text="blog.title">
-                <a th:href="/blog/${blog.id}"></a>
+            <h2>
+                <a th:href="'/blog/'+${blog.id}" th:text="${blog.title}"></a>
             </h2>
+            <span>
+                <label th:text="${blog.author.username}"/>
+            </span>
         </div>
     </div>
 </div>

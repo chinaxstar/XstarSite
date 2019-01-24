@@ -1,23 +1,47 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>登录</title>
-</head>
-<body>
-<form action="/register" method="post">
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/admin/login_base :: layout(~{::regist})}">
+
+<div th:fragment="regist">
+    <script>
+        $(document).ready(function () {
+            $("#register").click(function () {
+                var username = $("input[name='username']").val();
+                var paswd = $("input[name='passwd']").val();
+                if (username == null) {
+                    alert("用户名不能为空");
+                    return
+                }
+                if (paswd == null) {
+                    alert("密码不能为空");
+                    return
+                }
+
+                $.post("/api/v1/register", {
+                    "username": username,
+                    "passwd": paswd
+                }, function (data, status) {
+                    if (status && data.code === 0) {
+                        $(location).attr("href", "/")
+                    } else {
+                        alert(data.msg)
+                    }
+                })
+            });
+        });
+    </script>
+
     <div>
-        <input type="text" name="username" alt="用户名">
+        <div>
+            <input type="text" name="username" alt="用户名">
+        </div>
+        <div>
+            <input type="password" name="passwd" alt="密码">
+        </div>
+        <div th:if="${msg}" class="msg">
+            <p th:utext="${msg}" class="msgInfo"></p>
+        </div>
+        <button id="register">注册</button>
     </div>
-    <div>
-        <input type="password" name="passwd" alt="密码">
-    </div>
-    <div th:if="${msg}">
-        <p th:utext="${msg}"></p>
-    </div>
-    <div>
-        <input type="submit" value="注册">
-    </div>
-</form>
-</body>
+</div>
+
 </html>

@@ -1,6 +1,7 @@
 package cn.xstar.site.model;
 
 import javax.persistence.*;
+import java.util.Date;
 
 
 /**
@@ -34,15 +35,16 @@ public class Article {
     /**
      * 创建时间
      */
-    private long createTime;
+    private Date createTime;
     /**
      * 最后修改时间
      */
-    private long lastModifyTime;
+    private Date lastModifyTime;
     /**
      * 最后修改人
      */
-    private int lastModifyAuthor;
+    @ManyToOne
+    private User lastModifyAuthor;
 
     public int getId() {
         return id;
@@ -58,6 +60,14 @@ public class Article {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getKeywords() {
@@ -76,35 +86,27 @@ public class Article {
         this.author = author;
     }
 
-    public long getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(long createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
-    public long getLastModifyTime() {
+    public Date getLastModifyTime() {
         return lastModifyTime;
     }
 
-    public void setLastModifyTime(long lastModifyTime) {
+    public void setLastModifyTime(Date lastModifyTime) {
         this.lastModifyTime = lastModifyTime;
     }
 
-    public int getLastModifyAuthor() {
+    public User getLastModifyAuthor() {
         return lastModifyAuthor;
     }
 
-    public void setLastModifyAuthor(int lastModifyAuthor) {
+    public void setLastModifyAuthor(User lastModifyAuthor) {
         this.lastModifyAuthor = lastModifyAuthor;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 }

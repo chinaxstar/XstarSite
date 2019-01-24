@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)">
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content,links,scripts)">
 <head>
     <meta charset="UTF-8">
     <title th:text="${title}">首页</title>
     <link rel="stylesheet" href="../../sttaic/style.css"
           th:href="@{/css/style.css}">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <th:block th:replace="${links}"></th:block>
+    <th:block th:replace="${scripts}"></th:block>
 </head>
 <body>
 <header>
     <div class="nav" th:if="${user}!=null">
         <a class="logo" href="/" th:text="${user.username}">个人博客</a>
         <ul class="startlist">
-            <li><a href="/editor" th:href="@{/editor}">写文章</a></li>
+            <li><a href="/admin/articleEditor" th:href="@{../admin/articleEditor}">写文章</a></li>
         </ul>
     </div>
 </header>
-<div th:include="${content}" class="article"></div>
+<div th:include="${content}" class="content"></div>
 <footer>
     <p th:utext="${footerText}">Power By SpringBoot!</p>
 </footer>

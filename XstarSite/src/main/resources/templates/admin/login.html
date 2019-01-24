@@ -5,20 +5,23 @@
     <title>登录</title>
 </head>
 <body>
-<form action="/login" method="post">
-    <div>
-        <input type="text" name="username" alt="用户名">
-    </div>
-    <div>
-        <input type="password" name="passwd" alt="密码">
-    </div>
-    <div th:if="${msg}">
-        <p th:utext="${msg}"></p>
-    </div>
-    <div>
-        <input type="submit" value="登录">
-        <a th:href="@{/register}">新注册</a>
-    </div>
-</form>
+<div class="wrap">
+    <form th:action="@{admin/login}" method="POST">
+        <div>
+            <input type="text" name="username" alt="用户名">
+        </div>
+        <div>
+            <input type="password" name="passwd" alt="密码">
+        </div>
+        <div th:if="${msg}">
+            <p th:utext="${msg}"></p>
+        </div>
+        <div>
+            <input type="submit" value="登录">
+            <a th:href="@{admin/register}">新注册</a>
+        </div>
+    </form>
+
+</div>
 </body>
 </html>

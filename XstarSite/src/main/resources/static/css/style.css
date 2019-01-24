@@ -1,68 +1,118 @@
 * {
-	margin: 0;
-	padding: 0
+    margin: 0;
+    padding: 0
 }
 
 body {
-	font: 15px "Lucida Grande", Helvetica, Arial, sans-serif;
-	max-height: 100%;
+    font: 15px "Lucida Grande", Helvetica, Arial, sans-serif;
+    max-height: 100%;
+    background: #f5f6f7;
+    min-width: 1116px;
+    line-height: 24px;
+    font-size: 16px;
 }
 
 header {
-	width: 100%;
-	color: #FFF;
-	background: #333;
-	line-height: 46px;
-	overflow: hidden;
-	top: 0;
-	z-index: 100;
+    width: 100%;
+    color: #FFF;
+    background: #333;
+    line-height: 46px;
+    overflow: hidden;
+    top: 0;
+    z-index: 100;
 }
-
-
 
 footer {
-	width: 100%;
-	background: #333;
-	color: #a5a4a4;
-	text-align: center;
-	padding: 0;
+    width: 100%;
+    background: #333;
+    color: #a5a4a4;
+    text-align: center;
+    padding: 0;
 }
 
-ui, ul {
-	list-style: none;
+ul, li, ol, dl, dd, dt, form {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 a {
-	color: #00B7FF;
-	text-decoration: none;
+    color: #000000;
+    text-decoration: none;
 }
 
 .nav {
-	width: 1100px;
-	background: #333;
-	margin: auto;
+    width: 1100px;
+    background: #333;
+    margin: auto;
 }
 
 .logo {
-	font-size: 20px;
-	color: white;
+    font-size: 20px;
+    color: white;
 }
 
 .startlist {
-	float: right;
+    float: right;
 }
 
 .startlist li {
-	float: left;
-	display: block;
-	padding: 0 0 0 40px;
-	font-size: 16px;
+    float: left;
+    display: block;
+    padding: 0 0 0 40px;
+    font-size: 16px;
+}
+
+.main {
+    clear: both;
+    width: 1228px;
+    padding-left: 22px;
+    padding-right: 22px;
+    padding-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    background: #ffffff;
+}
+
+.content {
+    max-height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    min-height: 960px
+}
+
+.blogInfo {
+    width: 100%;
+    padding: 18px 24px;
+}
+
+.blogInfoTitle {
+    font-size: 16px;
+}
+
+.blogInfoTitle a:hover a:active {
+    color: #ca0c16;
+}
+
+.userbar {
+    height: 24px;
+    line-height: 24px;
+    font-size: 13px;
+    color: #8a8a8a;
+}
+
+.username {
+    float: left;
+    margin: 0 6px 0 0;
+}
+
+.time {
+    float: left;
+}
+
+.blogs li {
+    padding: 18px 24px;
 }
 
 
-.article {
-	max-height: 100%;
-	margin: auto;
-	overflow: hidden;
-	min-height: 960px
-}

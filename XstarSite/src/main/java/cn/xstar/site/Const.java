@@ -2,6 +2,7 @@ package cn.xstar.site;
 
 public class Const {
     public static final String SESSION_USER = "cn.xstar.site.user";
+    public static final String SESSION_ARTICLE = "cn.xstar.site.article";
 
 
     public static final int SUCCESS_CODE = 0;

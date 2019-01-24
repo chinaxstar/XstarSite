@@ -1,6 +1,14 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/admin/login_base :: layout(~{::funcs})}">
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/admin/login_base :: layout(~{::funcs},~{::link},~{::script})}">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
 <div th:fragment="funcs">
-	<button>写文章</button>
+	<div th:each="blog:${blogs}">
+		<a th:href="'/blog/'+${blog.getId()}" th:text="${blog.title}"></a>
+		<ul class="blogInfo">
+			<li th:text="${blog.author.username}"></li>
+			<li th:text="${#dates.format(blog.getLastModifyTime())}"></li>
+		</ul>
+	</div>
 </div>
 </html>

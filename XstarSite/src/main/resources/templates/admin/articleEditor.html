@@ -28,7 +28,7 @@
             var ue = UE.getEditor('container');
 
             function saveArticle() {
-                var url = "/saveArticle";
+                var url = "/api/v1/saveArticle";
                 var txt = ue.getPlainTxt();
                 var index = txt.indexOf("\n");
                 if (index != -1) txt = txt.slice(0, index);

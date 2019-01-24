@@ -1,6 +1,16 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" th:replace="~{base :: layout(~{::index_content})}">
-<div th:fragment="index_content" class="">
-	<img alt="星空" src="" th:src="@{/image/timg.png}">
+<html xmlns:th="http://www.thymeleaf.org" th:include="~{base :: layout(~{::index_content},~{},~{})}">
+<div th:fragment="index_content" class="blogs">
+    <ul th:each="blog:${blogs}">
+        <div class="blogInfo">
+            <div class="blogInfoTitle">
+                <h2><a th:href="'/blog/'+${blog.getId()}" th:text="${blog.title}"></a></h2>
+            </div>
+            <dl class="userbar">
+                <div th:text="${blog.author.username}" class="username"></div>
+                <div th:text="${#dates.format(blog.getLastModifyTime())}" class="time"></div>
+            </dl>
+        </div>
+    </ul>
 </div>
 </html>

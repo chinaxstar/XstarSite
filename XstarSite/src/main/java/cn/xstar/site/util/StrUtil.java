@@ -14,4 +14,16 @@ public class StrUtil {
         }
         return null;
     }
+
+    public static boolean isEmpty(String text) {
+        return null == text || "".equals(text.trim());
+    }
+
+    public static int parseInt(String text) {
+        return isEmpty(text) ? 0 : Integer.parseInt(text);
+    }
+
+    public static double parseDouble(String text) {
+        return isEmpty(text) ? 0.0 : Double.parseDouble(text);
+    }
 }

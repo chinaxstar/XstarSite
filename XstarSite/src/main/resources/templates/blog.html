@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/admin/login_base :: layout(~{::blog})}">
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/admin/login_base :: layout(~{::blog},~{},~{})}">
 <div th:fragment="blog">
     <h2 class="title" th:text="${blog.title}">标题</h2>
     <div class="articleInfo">
