@@ -36,7 +36,7 @@ public class IndexService {
     }
 
     public Article getBlogById(int blog) {
-        return blogRep.getOne(blog);
+        return blogRep.findArticleById(blog);
     }
 
     public NavigatorInfo[] getIndexNavigator() {

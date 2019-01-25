@@ -11,5 +11,7 @@ import java.util.List;
 public interface BlogRep extends JpaRepository<Article, Integer> {
 
     List<Article> findArticlesByAuthor(User user);
+
+    Article findArticleById(int id);
 }
 

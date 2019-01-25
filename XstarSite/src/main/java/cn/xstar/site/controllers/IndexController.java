@@ -50,7 +50,7 @@ public class IndexController {
         if (blog != null) {
             model.addAttribute("blog", blog);
             model.addAttribute("user", u);
-            return "/blog";
+            return "blog";
         } else {
             return "404";
         }
